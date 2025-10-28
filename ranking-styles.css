@@ -1,0 +1,472 @@
+/* Estilos específicos para a página de ranking */
+
+/* Header específico do ranking */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  background-color: #314255;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: #3c5268;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background-color: #00c896;
+  color: #1D2B3A;
+  border-color: #00c896;
+}
+
+/* Estatísticas Gerais */
+.stats-overview {
+  margin-bottom: 2rem;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #314255 0%, #3c5268 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #00c896;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00c896;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-top: 0.25rem;
+}
+
+/* Seção de Ranking */
+.ranking-section {
+  margin-bottom: 3rem;
+}
+
+.ranking-section h2 {
+  color: #00c896;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.ranking-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn {
+  background-color: #314255;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.view-btn:hover {
+  background-color: #3c5268;
+}
+
+.view-btn.active {
+  background-color: #00c896;
+  color: #1D2B3A;
+}
+
+/* Tabela de Ranking */
+.ranking-table-container {
+  background-color: #314255;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ranking-table thead {
+  background-color: #223140;
+}
+
+.ranking-table th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  color: #00c896;
+  font-weight: 500;
+  border-bottom: 2px solid #1D2B3A;
+}
+
+.ranking-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid #223140;
+  color: #ffffff;
+}
+
+.ranking-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.ranking-table tbody tr:hover {
+  background-color: #3c5268;
+}
+
+.ranking-table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Posições especiais */
+.position-1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%) !important;
+  color: #1D2B3A !important;
+  font-weight: bold;
+}
+
+.position-2 {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%) !important;
+  color: #1D2B3A !important;
+  font-weight: bold;
+}
+
+.position-3 {
+  background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%) !important;
+  color: #1D2B3A !important;
+  font-weight: bold;
+}
+
+/* Cards de Ranking */
+.ranking-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.ranking-card {
+  background: linear-gradient(135deg, #314255 0%, #3c5268 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.ranking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: #00c896;
+}
+
+.ranking-card.position-1 {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, #314255 0%, #ffd700 100%);
+}
+
+.ranking-card.position-2 {
+  border-color: #c0c0c0;
+  background: linear-gradient(135deg, #314255 0%, #c0c0c0 100%);
+}
+
+.ranking-card.position-3 {
+  border-color: #cd7f32;
+  background: linear-gradient(135deg, #314255 0%, #cd7f32 100%);
+}
+
+.ranking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.player-position {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00c896;
+  background-color: #223140;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  background-color: #223140;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00c896;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #cccccc;
+  margin-top: 0.25rem;
+}
+
+.win-rate-bar {
+  background-color: #223140;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.win-rate-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00c896 0%, #00ff94 100%);
+  transition: width 0.5s ease;
+}
+
+/* Top Performers */
+.top-performers {
+  margin-top: 3rem;
+}
+
+.top-performers h2 {
+  color: #00c896;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.top-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.top-category {
+  background: linear-gradient(135deg, #314255 0%, #3c5268 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.top-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.top-category h3 {
+  color: #00c896;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.top-player {
+  background-color: #223140;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.top-player-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.top-player-value {
+  font-size: 1.2rem;
+  color: #00ff94;
+  font-weight: bold;
+}
+
+/* Mensagem de nenhum jogador */
+.no-players {
+  text-align: center;
+  padding: 3rem;
+  color: #cccccc;
+  font-size: 1.1rem;
+}
+
+.no-players-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .main-nav {
+    justify-content: center;
+  }
+  
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ranking-table {
+    font-size: 0.8rem;
+  }
+  
+  .ranking-table th,
+  .ranking-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .ranking-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .top-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .ranking-table-container {
+    overflow-x: auto;
+  }
+  
+  .ranking-table {
+    min-width: 600px;
+  }
+  
+  .view-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .view-btn {
+    flex: 1;
+  }
+}
+
+/* Animações */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ranking-card,
+.stat-card,
+.top-category {
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .ranking-card,
+  .stat-card,
+  .top-category {
+    animation: none;
+  }
+  
+  .ranking-card:hover,
+  .stat-card:hover,
+  .top-category:hover {
+    transform: none;
+  }
+}
+
+/* Focus visible */
+.nav-link:focus-visible,
+.view-btn:focus-visible {
+  outline: 2px solid #00c896;
+  outline-offset: 2px;
+}

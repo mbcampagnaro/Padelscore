@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PadelScore - Ranking dos Jogadores</title>
+  <meta name="description" content="Ranking e estatísticas individuais dos jogadores de padel">
+  <meta name="keywords" content="padel, ranking, jogadores, estatísticas, vitórias">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sauce+One:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ranking-styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="header-content">
+        <h1>🏆 Ranking PadelScore</h1>
+        <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+          <a href="index.html" class="nav-link">📅 Jogos</a>
+          <a href="ranking.html" class="nav-link active">🏆 Ranking</a>
+        </nav>
+      </div>
+      
+      <div class="controls" role="search" aria-label="Controles de busca e filtro">
+        <div class="search-box">
+          <input 
+            type="search" 
+            id="search-players" 
+            placeholder="Buscar jogador..." 
+            aria-label="Buscar jogador no ranking"
+          >
+        </div>
+        
+        <div class="filter-buttons" role="group" aria-label="Filtros de ordenação">
+          <button class="filter-btn active" data-ordem="pontos" aria-pressed="true">
+            Pontos
+          </button>
+          <button class="filter-btn" data-ordem="vitorias" aria-pressed="false">
+            Vitórias
+          </button>
+          <button class="filter-btn" data-ordem="partidas" aria-pressed="false">
+            Partidas
+          </button>
+          <button class="filter-btn" data-ordem="nome" aria-pressed="false">
+            Nome
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <!-- Estatísticas Gerais -->
+      <section class="stats-overview" aria-label="Visão geral das estatísticas">
+        <div class="stats-cards">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-content">
+              <div class="stat-number" id="total-players">0</div>
+              <div class="stat-label">Jogadores Ativos</div>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-content">
+              <div class="stat-number" id="total-games">0</div>
+              <div class="stat-label">Jogos Realizados</div>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-content">
+              <div class="stat-number" id="avg-games">0</div>
+              <div class="stat-label">Média de Jogos/Jogador</div>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-content">
+              <div class="stat-number" id="win-rate">0%</div>
+              <div class="stat-label">Taxa de Vitória Geral</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ranking dos Jogadores -->
+      <section class="ranking-section" aria-label="Ranking dos jogadores">
+        <h2>Ranking Individual</h2>
+        
+        <div class="ranking-controls">
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="table" aria-pressed="true">
+              📊 Tabela
+            </button>
+            <button class="view-btn" data-view="cards" aria-pressed="false">
+              🎴 Cards
+            </button>
+          </div>
+        </div>
+
+        <!-- Visualização em Tabela -->
+        <div id="table-view" class="ranking-table-container" role="region" aria-label="Tabela de ranking">
+          <table class="ranking-table" role="table">
+            <thead>
+              <tr role="row">
+                <th role="columnheader" scope="col">Pos.</th>
+                <th role="columnheader" scope="col">Jogador</th>
+                <th role="columnheader" scope="col">Pontos</th>
+                <th role="columnheader" scope="col">Vitórias</th>
+                <th role="columnheader" scope="col">Partidas</th>
+                <th role="columnheader" scope="col">Taxa Vitória</th>
+                <th role="columnheader" scope="col">Sets Ganhos</th>
+                <th role="columnheader" scope="col">Sets Perdidos</th>
+              </tr>
+            </thead>
+            <tbody id="ranking-tbody">
+              <!-- Dados serão inseridos dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Visualização em Cards -->
+        <div id="cards-view" class="ranking-cards-container" role="region" aria-label="Cards de ranking" style="display: none;">
+          <div id="ranking-cards" class="ranking-cards-grid">
+            <!-- Cards serão inseridos dinamicamente -->
+          </div>
+        </div>
+
+        <!-- Mensagem quando não há jogadores -->
+        <div id="no-players" class="no-players" style="display: none;">
+          <div class="no-players-icon">👥</div>
+          <p>Nenhum jogador encontrado</p>
+          <p>Tente ajustar os filtros ou termo de busca</p>
+        </div>
+      </section>
+
+      <!-- Top Performers -->
+      <section class="top-performers" aria-label="Melhores desempenhos">
+        <h2>🏆 Destaques</h2>
+        <div class="top-categories">
+          <div class="top-category">
+            <h3>🥇 Mais Vitórias</h3>
+            <div id="most-wins" class="top-player">
+              <!-- Será preenchido dinamicamente -->
+            </div>
+          </div>
+          
+          <div class="top-category">
+            <h3>🎯 Melhor Taxa</h3>
+            <div id="best-rate" class="top-player">
+              <!-- Será preenchido dinamicamente -->
+            </div>
+          </div>
+          
+          <div class="top-category">
+            <h3>⚡ Mais Ativo</h3>
+            <div id="most-active" class="top-player">
+              <!-- Será preenchido dinamicamente -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="ranking-script.js"></script>
+</body>
+</html>

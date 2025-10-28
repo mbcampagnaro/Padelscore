@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PadelScore - Sistema de Controle de Jogos</title>
+  <meta name="description" content="Sistema para controle e acompanhamento de jogos de padel com placares em tempo real">
+  <meta name="keywords" content="padel, jogos, placar, esporte, quadra">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sauce+One:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="header-content">
+        <h1>PadelScore</h1>
+        <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+          <a href="index.html" class="nav-link active">📅 Jogos</a>
+          <a href="ranking.html" class="nav-link">🏆 Ranking</a>
+        </nav>
+      </div>
+      
+      <div class="controls" role="search" aria-label="Controles de busca e filtro">
+        <div class="search-box">
+          <input 
+            type="search" 
+            id="search-input" 
+            placeholder="Buscar por jogadores..." 
+            aria-label="Buscar jogos por nome dos jogadores"
+          >
+        </div>
+        
+        <div class="filter-buttons" role="group" aria-label="Filtros de status">
+          <button class="filter-btn active" data-filtro="todos" aria-pressed="true">
+            Todos
+          </button>
+          <button class="filter-btn" data-filtro="em-andamento" aria-pressed="false">
+            Em Andamento
+          </button>
+          <button class="filter-btn" data-filtro="agendado" aria-pressed="false">
+            Agendados
+          </button>
+          <button class="filter-btn" data-filtro="finalizado" aria-pressed="false">
+            Finalizados
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <section aria-label="Lista de jogos de padel">
+        <div id="jogos-grid" class="grid" role="grid" aria-label="Grid de jogos">
+          <!-- Os jogos serão renderizados dinamicamente pelo JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
